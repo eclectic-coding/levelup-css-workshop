@@ -1,0 +1,12 @@
+.container {
+  width: 80ch;
+  max-width: 95vw;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.layout-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}

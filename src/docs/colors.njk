@@ -1,0 +1,15 @@
+---
+title: Colors
+---
+
+<ul role="list" class="layout-flex">
+  {% for colorToken in colors %}
+    <li>
+      <figure class="swatch">
+        <figcaption class="background-{{ colorToken.name }}">
+          <strong>{{ colorToken.name }}</strong> {{ colorToken.color }}
+        </figcaption>
+      </figure>
+    </li>
+  {% endfor %}
+</ul>

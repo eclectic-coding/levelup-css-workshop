@@ -3,13 +3,13 @@
   "version": "1.0.0",
   "description": "Project for Stephanie Eckles' workshop: Level Up with Modern CSS",
   "scripts": {
-    "watch:sass": "sass  --no-source-map --watch src/sass:public/css",
+    "tokens": "npx a11y-color-tokens --outputDirPath='src/sass' --colorTokensPath='src/_data/colors.js' --compatibilityDocsPath='src/docs'",     "watch:sass": "sass  --no-source-map --watch src/sass:public/css",
     "watch:eleventy": "npx @11ty/eleventy --serve",
     "build:sass": "sass  --no-source-map src/sass:public/css",
     "build:eleventy": "npx @11ty/eleventy",
     "postbuild": "postcss public/css/*.css -u autoprefixer cssnano -r --no-map",
-    "start": "npm-run-all build:sass --parallel watch:*",
-    "build": "npm-run-all build:sass build:eleventy",
+    "start": "npm-run-all tokens build:sass --parallel watch:*",
+    "build": "npm-run-all tokens build:sass build:eleventy",
     "lint": "stylelint src/sass/**/*.scss src/sass/**/**/*.scss src/sass/**/**/**/*.scss",
     "lint:fix": "npm run lint --fix"
   },
@@ -18,6 +18,7 @@
   "license": "ISC",
   "dependencies": {
     "@11ty/eleventy": "^0.12.1",
+    "a11y-color-tokens": "^0.5.0",
     "autoprefixer": "^10.2.6",
     "cssnano": "^5.0.6",
     "npm-run-all": "^4.1.5",
