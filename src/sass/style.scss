@@ -2,6 +2,8 @@
 @use "reset";
 @use "utilities/color";
 @use "utilities/layout";
+@use "utilities/grid";
+@use "templates";
 
 body {
   background-color: #f9f9f9;
