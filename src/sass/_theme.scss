@@ -1,5 +1,9 @@
 @use "color-tokens" as *;
 
+$color-links: "var(--color-primary)" !default;
+
 :root {
   @include color-tokens();
+
+  --color-links: #{$color-links};
 }

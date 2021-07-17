@@ -8,6 +8,13 @@ title: Docs
 {% endfor -%}
 </ul>
 
+<h2>Components</h2>
+<ul>
+  {% for component in collections.components -%}
+    <li><a href="{{ component.url }}">{{ component.data.title }}</a></li>
+  {% endfor -%}
+</ul>
+
 <h2>Templates</h2>
 <ul>
   {% for page in collections.templates -%}

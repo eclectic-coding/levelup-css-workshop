@@ -1,11 +1,11 @@
 @use "theme";
 @use "reset";
-@use "utilities/color";
-@use "utilities/layout";
-@use "utilities/grid";
+// @use "global" with ($type-scale: "goldenRatio");
+@use "global";
+@use "components";
+@use "utilities";
 @use "templates";
 
 body {
   background-color: #f9f9f9;
-  font-family: system-ui, sans-serif;
 }
