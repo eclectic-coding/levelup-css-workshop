@@ -1,0 +1,75 @@
+$card-gutter: "1.5rem" !default;
+
+$card-gutter-var: "var(--card-gutter, #{$card-gutter})";
+
+.card {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--card-gap, 1rem);
+  border-radius: var(--card-radius, 0.25rem);
+  background-color: var(--card-background, #fff);
+  box-shadow: 0 0.25rem 0.45rem -0.15rem rgba(0, 0, 0, 0.5);
+
+  // stylelint-disable-next-line
+  > :is(h3, #override):not(:first-child) {
+    margin-top: 0;
+  }
+
+  > :is(h1, h2, h3, h4) {
+    margin-bottom: 0;
+
+    a {
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  // accessible clickable card
+  > :is(h1, h2, h3, h4) a,
+  > .button {
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      // Soon when logical properties are supported - inset: 0;
+    }
+  }
+
+
+  > *:not(img) {
+    margin-right: #{$card-gutter-var};
+    margin-left: #{$card-gutter-var};
+  }
+
+  > :first-child:not(img) {
+    margin-top: #{$card-gutter-var};
+  }
+
+  > img:first-child {
+    border-radius: var(--card-radius, 0.25rem) var(--card-radius, 0.25rem) 0 0;
+  }
+
+  > :last-child:not(img) {
+    margin-bottom: #{$card-gutter-var};
+  }
+
+  > img:last-child {
+    border-radius: 0 0 var(--card-radius, 0.25rem) var(--card-radius, 0.25rem);
+  }
+
+  > :is(.button, ul):last-child {
+    margin-top: auto;
+  }
+
+  .layout-flex {
+    --gap: 1rem;
+  }
+}
