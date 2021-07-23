@@ -33,7 +33,7 @@ $button-colors: "error", "text" !default;
   // Text
   text-align: center;
   line-height: 1;
-  font-weight: bold;
+  font-weight: var(--font-weight-bold);
 
   // Effects
   // transition: all 180ms ease-in-out;
@@ -44,12 +44,17 @@ $button-colors: "error", "text" !default;
   &:active {
     background-color: var(--button-color);
     color: var(--button-background);
-    border-color: currentColor;
+
+    &:not(.button--outlined) {
+      border-color: currentColor;
+    }
   }
 
+
   &:focus {
-    box-shadow: 0 0 0 max(0.15em, 2px) var(--button-focus-inner, var(--button-color)),
-    0 0 0 max(0.3em, 2px) var(--button-focus-outer, var(--button-background));;
+    box-shadow: 0 0 0 max(0.15em, 2px)
+    var(--button-focus-inner, var(--button-color)),
+    0 0 0 max(0.3em, 2px) var(--button-focus-outer, var(--button-background));
   }
 
   @each $color in $button-colors {
@@ -57,6 +62,13 @@ $button-colors: "error", "text" !default;
       --button-background: var(--color-#{$color});
       --button-color: var(--color-on-#{$color});
     }
+  }
+
+  &--outlined {
+    --button-focus-inner: var(--button-background);
+    --button-focus-outer: var(--button-color);
+
+    border-color: var(--button-color);
   }
 
   &__icon {
@@ -75,5 +87,4 @@ $button-colors: "error", "text" !default;
   }
 
 }
-
-// style-lint-enable
+// stylelint-enable

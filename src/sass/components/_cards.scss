@@ -13,7 +13,7 @@ $card-gutter-var: "var(--card-gutter, #{$card-gutter})";
   box-shadow: 0 0.25rem 0.45rem -0.15rem rgba(0, 0, 0, 0.5);
 
   // stylelint-disable-next-line
-  > :is(h3, #override):not(:first-child) {
+  > :is(*, #override):not(:first-child) {
     margin-top: 0;
   }
 
@@ -31,7 +31,8 @@ $card-gutter-var: "var(--card-gutter, #{$card-gutter})";
 
   // accessible clickable card
   > :is(h1, h2, h3, h4) a,
-  > .button {
+  > .button,
+  > a:last-child {
     &::before {
       content: "";
       position: absolute;
@@ -65,11 +66,21 @@ $card-gutter-var: "var(--card-gutter, #{$card-gutter})";
     border-radius: 0 0 var(--card-radius, 0.25rem) var(--card-radius, 0.25rem);
   }
 
-  > :is(.button, ul):last-child {
+  > :is(.button, ul, a, #override):last-child {
     margin-top: auto;
   }
 
   .layout-flex {
     --gap: 1rem;
+  }
+
+  .form-group {
+    --form-field-width: 100%;
+
+    align-self: stretch;
+
+    + .form-group {
+      margin-top: 0;
+    }
   }
 }

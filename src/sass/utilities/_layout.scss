@@ -1,6 +1,5 @@
 .container {
-  width: 80ch;
-  max-width: 95vw;
+  width: min(var(--container-width, 80ch), 100vw - 3rem);
   margin-right: auto;
   margin-left: auto;
 }
@@ -9,6 +8,11 @@ section,
 .section {
   margin-top: 8vh;
   margin-bottom: 8vh;
+}
+
+.section--padded {
+  padding-top: 8vh;
+  padding-bottom: 8vh;
 }
 
 .layout-flex {

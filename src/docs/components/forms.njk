@@ -1,0 +1,92 @@
+---
+title: Forms
+---
+
+<form>
+  <div class="form-group">
+    <label for="text-input">Text input</label>
+    <input class="form-field" type="text" id="text-input" name="text-input" />
+  </div>
+
+  <div class="form-group form-error">
+    <label for="text-input-error">Text input with error</label>
+    <input class="form-field" type="text" id="text-input-error" name="text-input-error" aria-describedby="text-input-error-msg" />
+    <small id="text-input-error-msg" class="form-error-text">This field has an error</small>
+  </div>
+
+  <div class="form-group">
+    <label for="textarea">Textarea</label>
+    <textarea class="form-field" id="textarea" name="textarea"></textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="standard-select">Standard Select</label>
+    <div class="form-field select">
+      <select id="standard-select" name="standard-select">
+        <option value="Option 1">Option 1</option>
+        <option value="Option 2">Option 2</option>
+        <option value="Option 3">Option 3</option>
+        <option value="Option 4">Option 4</option>
+        <option value="Option 5">Option 5</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="form-control checkbox">
+      <span class="form-control__input checkbox__input">
+        <input type="checkbox" name="checkbox" />
+        <span class="input__control">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="5"
+                  d="M1.73 12.91l6.37 6.37L22.79 4.59"
+              />
+            </svg>
+        </span>
+      </span>
+      Checkbox
+    </label>
+  </div>
+
+  <div class="form-group">
+    <label class="form-control checkbox">
+      <span class="form-control__input checkbox__input">
+        <input type="checkbox" name="checked" checked />
+        <span class="input__control">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="5"
+                  d="M1.73 12.91l6.37 6.37L22.79 4.59"
+              />
+            </svg>
+        </span>
+      </span>
+      Checkbox - Checked
+    </label>
+  </div>
+
+  <div class="form-group">
+    <label class="form-control radio">
+      <span class="form-control__input radio__input">
+        <input type="radio" name="radio" />
+        <span class="input__control"> </span>
+      </span>
+      Radio
+    </label>
+  </div>
+
+  <div class="form-group">
+    <label class="form-control radio">
+      <span class="form-control__input radio__input">
+        <input type="radio" name="radio" checked />
+        <span class="input__control"> </span>
+      </span>
+      Radio - Checked
+    </label>
+  </div>
+</form>

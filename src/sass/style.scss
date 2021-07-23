@@ -2,10 +2,6 @@
 @use "reset";
 // @use "global" with ($type-scale: "goldenRatio");
 @use "global";
-@use "components";
+@use "components" with ($form-border-color: hsl(0, 0%, 50%));
 @use "utilities";
 @use "templates";
-
-body {
-  background-color: #f9f9f9;
-}

@@ -5,7 +5,7 @@
   "scripts": {
     "tokens": "npx a11y-color-tokens --outputDirPath='src/sass' --colorTokensPath='src/_data/colors.js' --compatibilityDocsPath='src/docs'",     "watch:sass": "sass  --no-source-map --watch src/sass:public/css",
     "watch:eleventy": "npx @11ty/eleventy --serve",
-    "build:sass": "sass  --no-source-map src/sass:public/css",
+    "build:sass": "sass src/sass:public/css",
     "build:eleventy": "npx @11ty/eleventy",
     "postbuild": "postcss public/css/*.css -u autoprefixer cssnano -r --no-map",
     "start": "npm-run-all tokens build:sass --parallel watch:*",

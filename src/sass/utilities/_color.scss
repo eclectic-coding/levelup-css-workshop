@@ -14,3 +14,15 @@
     color: var(--color-on-#{$color});
   }
 }
+
+$greys: "medium", "light" !default;
+
+@each $shade in $greys {
+  .background-grey-#{$shade} {
+    background-color: var(--grey-#{$shade});
+
+    @if ($shade == "medium") {
+      color: #fff;
+    }
+  }
+}
